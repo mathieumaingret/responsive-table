@@ -1,0 +1,70 @@
+.responsive-table {
+  border: 0;
+  /* Responsive layout
+       ========================================================================== */
+  /* Labels can be displayed
+       ========================================================================== */
+  /* No labels founded
+       ========================================================================== */
+}
+
+.responsive-table.is-initialized thead {
+  border: none;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.responsive-table.is-initialized tr {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.responsive-table.is-initialized td {
+  display: block;
+  width: 100% !important;
+  padding: 10px 12px;
+  border: 0 solid #ddd;
+  border-bottom-width: 1px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.responsive-table.is-initialized td:last-of-type {
+  border-bottom: 0;
+}
+
+.responsive-table.is-label td:before {
+  content: attr(data-head-label);
+}
+
+.responsive-table.is-label.l-cells-inline td {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.responsive-table.is-label.l-cells-inline td:before {
+  text-align: left;
+}
+
+.responsive-table.is-label.l-cells-inline .cell-wrapper {
+  text-align: right;
+}
+
+.responsive-table.is-label.l-cells-block td:before {
+  display: block;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  font-size: .8em;
+}

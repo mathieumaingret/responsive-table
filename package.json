@@ -1,0 +1,38 @@
+{
+  "name": "responsive-table",
+  "version": "1.0",
+  "main": "./dist/responsive-table.min.js",
+  "repository": "https://github.com/mathieumaingret/responsive-table",
+  "author": "Mathieu MAINGRET <mathieu@leszebres.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.7.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.2.0",
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^3.0.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-pixrem": "^1.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1",
+    "postcss-pxtorem": "^4.0.1"
+  },
+  "sass": {
+    "outputStyle": "expanded"
+  },
+  "autoprefixer": {
+    "browsers": [
+      "last 2 versions",
+      "IE 11"
+    ]
+  },
+  "pxtorem": {
+    "replace": true,
+    "unitPrecision": 3,
+    "propList": [
+      "font-size"
+    ]
+  }
+}

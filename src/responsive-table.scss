@@ -1,0 +1,83 @@
+$responsive-table--padding-horizontal: 12px;
+$responsive-table--padding-vertical: 10px;
+
+.responsive-table {
+    border: 0;
+
+    /* Responsive layout
+       ========================================================================== */
+    &.is-initialized {
+
+        // Hide table head
+        thead {
+            border: none;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+        tr {
+            display: block;
+            margin-bottom: $responsive-table--padding-vertical;
+        }
+        td {
+            display: block;
+            width: 100% !important;
+            padding: $responsive-table--padding-vertical $responsive-table--padding-horizontal;
+            border: 0 solid #ddd;
+            border-bottom-width: 1px;
+            box-sizing: border-box;
+
+            &:last-of-type {
+                border-bottom: 0;
+            }
+        }
+    }
+
+    /* Labels can be displayed
+       ========================================================================== */
+    &.is-label {
+        td {
+            &:before {
+                content: attr(data-head-label);
+            }
+        }
+
+        // Inline display
+        &.l-cells-inline {
+            td {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &:before {
+                    text-align: left;
+                }
+            }
+            .cell-wrapper {
+                text-align: right;
+            }
+        }
+
+        // Labels + content block
+        &.l-cells-block {
+            td {
+                &:before {
+                    display: block;
+                    margin-bottom: floor($responsive-table--padding-vertical * 4/10);
+                    text-transform: uppercase;
+                    font-size: .8em;
+                }
+            }
+        }
+    }
+
+    /* No labels founded
+       ========================================================================== */
+    &:not(.is-label) {
+
+    }
+}
