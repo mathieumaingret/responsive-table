@@ -21,10 +21,10 @@
     $.ResponsiveTable.defaults = {
         devices:                undefined, // *
         deviceDetect:           undefined, // *
-        breakpoint:             'mobile', // *
+        breakpoint:             'mobile',
         reloadOnResize:         true,
         allowFallbackOnFirstRow: true,
-        labelsDisplay:          'inline', // * inline / block
+        labelsDisplay:          'inline', // inline / block
         classes: {
             prefix: 'responsive-table',
             initialized: 'is-initialized',
