@@ -2,7 +2,7 @@
 
 Enable responsive layout on html tables elements
 
-## Requirement
+## Requirements
 
 This script requires
 
