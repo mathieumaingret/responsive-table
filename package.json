@@ -1,6 +1,6 @@
 {
   "name": "responsive-table",
-  "version": "1.0",
+  "version": "1.0.0",
   "main": "./dist/responsive-table.min.js",
   "repository": "https://github.com/mathieumaingret/responsive-table",
   "author": "Mathieu MAINGRET <mathieu@leszebres.fr>",
