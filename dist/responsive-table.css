@@ -30,8 +30,7 @@
   padding: 10px 12px;
   border: 0 solid #ddd;
   border-bottom-width: 1px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .responsive-table.is-initialized td:last-of-type {
@@ -43,15 +42,9 @@
 }
 
 .responsive-table.is-label.l-cells-inline td {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .responsive-table.is-label.l-cells-inline td:before {

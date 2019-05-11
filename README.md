@@ -6,7 +6,7 @@ Enable responsive layout on html tables elements
 
 This script requires
 
-  - [jQuery] >= 1.1.4
+  - [jQuery] >= 1.7.0
   - https://github.com/kevinbaubet/devicedetect deviceDetect library to check current device and formats
 
 ## Installation
