@@ -1,5 +1,9 @@
 $responsive-table--padding-horizontal: 12px;
 $responsive-table--padding-vertical: 10px;
+$color--border: #ddd;
+$color--text: #000;
+$color--text-lighter: #555;
+$v-align: 48px;
 
 .responsive-table {
     border: 0;
@@ -21,13 +25,14 @@ $responsive-table--padding-vertical: 10px;
         }
         tr {
             display: block;
-            margin-bottom: $responsive-table--padding-vertical;
+            border: 1px solid $color--border;
+            margin-bottom: $v-align/2;
         }
         td {
             display: block;
             width: 100% !important;
             padding: $responsive-table--padding-vertical $responsive-table--padding-horizontal;
-            border: 0 solid #ddd;
+            border: 0 solid $color--border;
             border-bottom-width: 1px;
             box-sizing: border-box;
 
@@ -46,6 +51,10 @@ $responsive-table--padding-vertical: 10px;
             }
         }
 
+        .is-hidden {
+            display: none;
+        }
+
         // Inline display
         &.l-cells-inline {
             td {
@@ -55,6 +64,7 @@ $responsive-table--padding-vertical: 10px;
 
                 &:before {
                     text-align: left;
+                    margin-right: $responsive-table--padding-horizontal;
                 }
             }
             .cell-wrapper {
@@ -68,8 +78,6 @@ $responsive-table--padding-vertical: 10px;
                 &:before {
                     display: block;
                     margin-bottom: floor($responsive-table--padding-vertical * 4/10);
-                    text-transform: uppercase;
-                    font-size: .8em;
                 }
             }
         }

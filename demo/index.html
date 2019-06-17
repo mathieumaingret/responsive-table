@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <title>Responsive Table</title>
+    <meta name="viewport" content="maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=0">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../dist/responsive-table.css"/>
+    <link rel="stylesheet" href="demo.css"/>
+</head>
+<body>
+<header class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Responsive Table</h1>
+        <p class="lead text-muted">Gestion des tableaux responsives</p>
+        <p>
+            <a href="#" class="btn btn-primary my-2">...</a>
+            <a href="#" class="btn btn-secondary my-2">...</a>
+        </p>
+    </div>
+</header>
+
+<section class="py-5 container">
+    <h2>Tableau simple avec entête</h2>
+
+    <div class="btn-group btn-group-toggle mt-4 mb-4" data-toggle="buttons">
+        Mise en page :
+        <label class="btn btn-secondary active">
+            <input type="radio" name="options" autocomplete="off" value="inline" data-table="table-normal" checked> Horizontale
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" autocomplete="off" data-table="table-normal" value="block"> Verticale
+        </label>
+    </div>
+
+    <table id="table-normal" class="table responsive-table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Ma commune est…</th>
+            <th>Mon service relève de :</th>
+            <th>Numéros de services clientèle / urgence</th>
+            <th>Vos démarches</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Châteaubernard, Cherves-Richemont, Cognac, Javrezac, Merpins, Saint-Brice</td>
+            <td>
+                <p>VEOLIA (assainissement collectif)</p>
+            </td>
+            <td>05 61 80 09 02</td>
+            <td><a href="https://www.service-client.veoliaeau.fr/demande-abonnement-eau.html" target="_blank">Souscrire
+                mon abonnement au service d’assainissement collectif</a>,<br><a
+                    href="https://www.service-client.veoliaeau.fr/demande-desabonnement-3.html" target="_blank">Résilier
+                mon abonnement au service d’assainissement collectif</a>,<br><a
+                    href="https://www.service-client.veoliaeau.fr/home/demarches-en-ligne/branchement/loc-branchement.html"
+                    target="_blank">Faire une demande de raccordement au réseau collectif</a></td>
+        </tr>
+        <tr>
+            <td>Châteauneuf-sur-Charente, Hiersac, Lignières-Sonneville</td>
+            <td>SAUR (assainissement collectif)</td>
+            <td>05 87 23 10 00/10 08</td>
+            <td><a href="https://www.saurclient.fr/EspacePublic/Contact.aspx" target="_blank">Souscrire mon
+                abonnement au service d’assainissement collectif</a>,<br><a
+                    href="https://www.saurclient.fr/EspacePublic/Contact.aspx" target="_blank">Résilier mon
+                abonnement au service d’assainissement collectif</a></td>
+        </tr>
+        <tr>
+            <td>Jarnac</td>
+            <td>AGUR (assainissement collectif)</td>
+            <td>09 69 39 40 00</td>
+            <td><a href="http://www.agur.fr/agence-en-ligne" target="_blank">Souscrire mon abonnement au service
+                d’assainissement collectif</a>,<br><a href="http://www.agur.fr/agence-en-ligne" target="_blank">Résilier
+                mon abonnement au service d’assainissement collectif</a></td>
+        </tr>
+        <tr>
+            <td>Ars, Bréville, Boutiers-Saint-Trojan, Bourg-charente, Bréville, Chassors, Foussignac, Genté,
+                Gensac la Pallue, Gimeux, Gondeville-Mainxe, Graves-Saint-Amant, Houlette, Julienne, Les
+                Métairies, Louzac St André, Mérignac, Mesnac, Nercillac, St Fort sur le Né, St Laurent de
+                Cognac, St Même les Carrières, Saint-Simon, Salles d’Angles, Segonzac, Sigogne, Triac- Lautrait,
+                Vibrac
+            </td>
+            <td>Grand Cognac (assainissement collectif)</td>
+            <td>05 45 35 12 29</td>
+            <td>Souscrire ou résilier mon abonnement au service d’assainissement collectif : contactez le
+                service Eau et assainissement de Grand Cognac <a href="mailto:eau-assainissement@grand-cognac.fr">eau-assainissement@grand-cognac.fr</a>,
+                Rue du Chape - ZAC du Malestier, 16130 Segonzac
+            </td>
+        </tr>
+        <tr>
+            <td>Ambleville, Angeac-Champagne, Angeac-Charente, Bassac, Bellevigne, Birac, Bonneuil, Bouteville,
+                Champmillon, Criteuil la Magdeleine, Fleurac, Juillac le coq, Mosnac, Moulidars, Reparsac,
+                Sainte-Sévère, Saint-Preuil, Saint-Simeux, Saint-Sulpice de Cognac
+            </td>
+            <td>SPANC de Grand Cognac (assainissement non collectif)</td>
+            <td>05 45 35 12 29</td>
+            <td>Faire une demande d'installation, de contrôle de bon fonctionnement...&nbsp; : contactez le
+                service Eau et assainissement de Grand Cognac <a href="mailto:eau-assainissement@grand-cognac.fr">eau-assainissement@grand-cognac.fr</a>,
+                Rue du Chape - ZAC du Malestier, 16130 Segonzac
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <hr class="mt-5 mb-5">
+
+    <h2>Fallback sur la première colonne</h2>
+    <table border="1" cellpadding="1" cellspacing="1" id="table-column" class="table responsive-table table-striped">
+        <tbody>
+        <tr>
+            <td>Montants</td>
+            <td>100x65</td>
+        </tr>
+        <tr>
+            <td>Traverses horizontales / verticales</td>
+            <td>76x40 / 76x32</td>
+        </tr>
+        <tr>
+            <td>Barreaux</td>
+            <td>65x18</td>
+        </tr>
+        <tr>
+            <td>Planches</td>
+            <td>100x18 ou 275x18</td>
+        </tr>
+        <tr>
+            <td>Tôle</td>
+            <td>20/10ème</td>
+        </tr>
+        <tr>
+            <td>Verre opale</td>
+            <td>Verre feuilleté 33.2</td>
+        </tr>
+        <tr>
+            <td>Sabot laqué</td>
+            <td>De série</td>
+        </tr>
+        <tr>
+            <td>Poignée laquée</td>
+            <td>De série</td>
+        </tr>
+        <tr>
+            <td>Gond laqués</td>
+            <td>De série</td>
+        </tr>
+        <tr>
+            <td>Embouts plat</td>
+            <td>Oui</td>
+        </tr>
+        <tr>
+            <td>Embouts arrondis</td>
+            <td>Oui</td>
+        </tr>
+        <tr>
+            <td>18 coloris satinés standards</td>
+            <td>Oui</td>
+        </tr>
+        <tr>
+            <td>13 coloris sablés standards</td>
+            <td>Oui</td>
+        </tr>
+        </tbody>
+    </table>
+
+</section>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@kevinbaubet/devicedetect@2.1.3/dist/devicedetect.min.js"></script>
+<script src="../src/responsive-table.js"></script>
+
+<script>
+    jQuery(document).ready(function ($) {
+
+        $('.btn-group').on('change ready', 'input', function (event) {
+            var input = $(event.currentTarget);
+
+            $('#' + input.attr('data-table')).responsiveTable({
+                labelsDisplay: input.val()
+            });
+        });
+
+        $('#table-column').responsiveTable({
+            labelsDisplay: 'block',
+            forceFallbackOnFirstColumn: true
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,6 +1,13 @@
 (function ($) {
     'use strict';
 
+    /**
+     *
+     * @param elements
+     * @param options
+     * @returns {*|$.ResponsiveTable|$.ResponsiveTable}
+     * @constructor
+     */
     $.ResponsiveTable = function (elements, options) {
         // Dom elements
         this.elements = {
@@ -18,22 +25,31 @@
         return this;
     };
 
+    /**
+     *
+     */
     $.ResponsiveTable.defaults = {
         devices:                undefined, // *
         deviceDetect:           undefined, // *
         breakpoint:             'mobile',
         reloadOnResize:         true,
         allowFallbackOnFirstRow: true,
+        forceFallbackOnFirstColumn: false,
         labelsDisplay:          'inline', // inline / block
         classes: {
             prefix: 'responsive-table',
             initialized: 'is-initialized',
             hasLabels: 'is-label',
-            cellWrapper: 'cell-wrapper'
+            cellWrapper: 'cell-wrapper',
+            hidden: 'is-hidden'
         }
     };
 
+    /**
+     *
+     */
     $.ResponsiveTable.prototype = {
+
         /**
          * Set required settings and prevent loading if they are missing or broken
          * @returns {boolean}
@@ -90,19 +106,26 @@
 
                 if (self.settings.devices[self.settings.breakpoint] === true) {
                     var labels;
+                    var type;
 
                     table.addClass(self.settings.classes.initialized);
 
                     // Get labels
-                    if ((table.find('th').length === 0) && self.settings.allowFallbackOnFirstRow) {
-                        labels = self.getFirstRowLabels(table)
-                    }
-                    else {
-                        labels = self.getHeadLabels(table);
+                    if (self.settings.forceFallbackOnFirstColumn) {
+                        labels = self.getLabelsFromFirstColumn(table);
+                        type = 'column';
+                    } else {
+                        if ((table.find('th').length === 0) && self.settings.allowFallbackOnFirstRow) {
+                            labels = self.getLabelsFromFirstRow(table);
+                            type = 'row';
+                        } else {
+                            labels = self.getLabelsFromHeader(table);
+                            type = 'header';
+                        }
                     }
 
                     // Apply layout and classes
-                    self.setResponsiveLayout(table, labels);
+                    self.setResponsiveLayout(table, labels, type);
 
                     if (labels !== undefined && labels.length) {
                         table.addClass(self.settings.classes.hasLabels);
@@ -120,8 +143,9 @@
          * Apply responsive behaviours and remove inline styles
          * @param table
          * @param labels
+         * @param type
          */
-        setResponsiveLayout: function (table, labels) {
+        setResponsiveLayout: function (table, labels, type) {
             var self = this;
 
             table.find('tr, td, th').removeAttr('style');
@@ -133,9 +157,20 @@
                     tr.children().each(function (cellIndex, cell) {
                         cell = $(cell);
 
+                        var label;
+                        if (type === 'column') {
+                            if (cellIndex === 0) {
+                                cell.addClass(self.settings.classes.classes.hidden);
+                            } else {
+                                label = labels[trIndex];
+                            }
+                        } else {
+                            label = labels[cellIndex];
+                        }
+
                         cell
                             .attr({
-                                'data-head-label': labels[cellIndex]
+                                'data-head-label': label
                             })
                             .html($('<div>', {
                                 'class': self.settings.classes.cellWrapper,
@@ -151,10 +186,24 @@
          * @param table
          * @returns {Array}
          */
-        getFirstRowLabels: function (table) {
+        getLabelsFromFirstRow: function (table) {
             var labels = [];
 
             table.find('tr').eq(0).children('td').each(function (i, cell) {
+                labels.push($(cell).text());
+            });
+
+            return labels;
+        },
+
+        /**
+         * @param table
+         * @returns {Array}
+         */
+        getLabelsFromFirstColumn: function (table) {
+            var labels = [];
+
+            table.find('tr > td:first-child').each(function (i, cell) {
                 labels.push($(cell).text());
             });
 
@@ -166,7 +215,7 @@
          * @param table
          * @returns {Array}
          */
-        getHeadLabels: function (table) {
+        getLabelsFromHeader: function (table) {
             var labels = [];
 
             table.find('thead > tr').eq(0).children('th, td').each(function (i, cell) {
@@ -177,6 +226,11 @@
         }
     };
 
+    /**
+     *
+     * @param options
+     * @returns {*|$.ResponsiveTable}
+     */
     $.fn.responsiveTable = function (options) {
         return new $.ResponsiveTable($(this), options);
     };

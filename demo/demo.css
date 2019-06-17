@@ -1,0 +1,10 @@
+table p {
+    margin-bottom: 0;
+}
+
+.responsive-table.is-label td:before {
+    color: #9a9a9a;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: .8em;
+}
